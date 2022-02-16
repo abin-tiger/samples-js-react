@@ -11,4 +11,6 @@ COPY okta-hosted-login .
 RUN npm install
 RUN npm install yarn
 
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 ENTRYPOINT [ "npm" , "run", "start:browser:none" ]
