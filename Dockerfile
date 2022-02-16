@@ -1,4 +1,4 @@
-FROM node:current-alpine3.15
+FROM node:latest
 
 WORKDIR /app
 
@@ -9,5 +9,6 @@ ENV SKIP_PREFLIGHT_CHECK=true
 
 COPY okta-hosted-login .
 RUN npm install
+RUN npm install yarn
 
-ENTRYPOINT [ "npm", "start" ]
+ENTRYPOINT [ "npm" , "run", "start:browser:none" ]
